@@ -9,6 +9,7 @@ trash-game/[Bb]uild/
 trash-game/[Bb]uilds/
 trash-game/[Ll]ogs/
 trash-game/[Uu]ser[Ss]ettings/
+trash-game/.vscode/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
