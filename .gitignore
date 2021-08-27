@@ -70,3 +70,6 @@ trash-game/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 trash-game/[Aa]ssets/[Ss]treamingAssets/aa.meta
 trash-game/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Affinity photo files
+*.afphoto
