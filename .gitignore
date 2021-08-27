@@ -73,3 +73,6 @@ trash-game/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Affinity photo files
 *.afphoto
+
+# .DS_Store
+*.DS_Store
