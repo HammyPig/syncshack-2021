@@ -12,6 +12,7 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] Text countdownText;
     [SerializeField] AudioSource warningSound;
     [SerializeField] AudioSource finishSound;
+    public GameOverScreen gameOverScreen;
 
     // Start is called before the first frame update
     void Start() {
@@ -37,7 +38,7 @@ public class CountdownTimer : MonoBehaviour
 
             if (timeLeft <= 0) {
                 timeLeft = 0;
-                // run event
+                gameOver();
             }
         }
     }
@@ -50,5 +51,9 @@ public class CountdownTimer : MonoBehaviour
         warningSound.Play();
         yield return new WaitForSeconds(1);
         alarm = true;
+    }
+
+    public void gameOver() {
+        gameOverScreen.setup(10);
     }
 }

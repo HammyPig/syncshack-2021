@@ -706,6 +706,7 @@ MonoBehaviour:
   countdownText: {fileID: 1472836576}
   warningSound: {fileID: 1472836578}
   finishSound: {fileID: 1472836578}
+  gameOverScreen: {fileID: 0}
 --- !u!114 &1472836576
 MonoBehaviour:
   m_ObjectHideFlags: 0
