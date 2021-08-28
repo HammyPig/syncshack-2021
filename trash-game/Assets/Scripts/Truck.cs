@@ -12,8 +12,6 @@ public class Truck : MonoBehaviour
 
     private trashType truckType;
 
-    private Material m_material;
-
     enum trashType {
         TRASH, // 0
         RECYCLABLE // 1
@@ -32,14 +30,15 @@ public class Truck : MonoBehaviour
         int genRand = r.Next(0, 2);
         truckType = (trashType)genRand;
 
-        // material
-        m_material = GetComponent<Renderer>().material;
 
         if(genRand == 0) {
             // it is trash
-            m_material.color = Color.red;
+            // m_material.color = Color.red;
+            gameObject.GetComponent<Renderer>().material.color = new Color32(140, 14, 14, 255);
+
         } else {
-            m_material.color = Color.green;
+            // m_material.color = Color.green;
+            gameObject.GetComponent<Renderer>().material.color = new Color32(14, 118, 10, 255);
         }
         
         if(right) {
@@ -52,9 +51,9 @@ public class Truck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!right && transform.position.x < screenBounds.x * 2) {
+        if(!right && transform.position.x < screenBounds.x * 3) {
             Destroy(this.gameObject);
-        } else if(right && transform.position.x > screenBounds.x * -2) {
+        } else if(right && transform.position.x > screenBounds.x * -3) {
             Destroy(this.gameObject);
         }
     }
