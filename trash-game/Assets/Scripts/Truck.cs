@@ -41,14 +41,10 @@ public class Truck : MonoBehaviour
         } else {
             m_material.color = Color.green;
         }
-
-        Debug.Log("Trash type:" + truckType);
         
         if(right) {
-            Debug.Log("I am moving to the right");
             rb.velocity = new Vector3(1 * speed, 0, 0);
         } else {
-            Debug.Log("I am moving to the left");
             rb.velocity = new Vector3(-1 * speed, 0, 0);
         }
     }
