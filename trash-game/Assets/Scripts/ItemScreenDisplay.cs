@@ -24,8 +24,12 @@ public class ItemScreenDisplay : MonoBehaviour
     }
 
     IEnumerator setScreenText(string item) {
-        screenText.text = standby;
-        yield return new WaitForSeconds(1);
+        screenText.text = ".";
+        yield return new WaitForSeconds(0.3f);
+        screenText.text = "..";
+        yield return new WaitForSeconds(0.3f);
+        screenText.text = "...";
+        yield return new WaitForSeconds(0.4f);
         screenText.text = item;
         tickSource.Play();
     }
