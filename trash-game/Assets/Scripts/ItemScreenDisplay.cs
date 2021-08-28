@@ -5,7 +5,6 @@ using TMPro;
 
 public class ItemScreenDisplay : MonoBehaviour
 {
-    string standby = "...";
     string item = "Shampoo Bottle";
 
     [SerializeField] TextMeshPro screenText;
@@ -25,11 +24,11 @@ public class ItemScreenDisplay : MonoBehaviour
 
     IEnumerator setScreenText(string item) {
         screenText.text = ".";
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.33f);
         screenText.text = "..";
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.33f);
         screenText.text = "...";
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.34f);
         screenText.text = item;
         tickSource.Play();
     }
