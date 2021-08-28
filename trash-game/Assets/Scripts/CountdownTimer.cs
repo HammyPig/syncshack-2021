@@ -27,4 +27,8 @@ public class CountdownTimer : MonoBehaviour
             }
         }
     }
+
+    void addToTime(float time) {
+        timeLeft += time;
+    }
 }

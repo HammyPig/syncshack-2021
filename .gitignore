@@ -76,3 +76,6 @@ trash-game/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # .DS_Store
 *.DS_Store
+
+# Ignore temporary excel files
+~$*.xlsx
