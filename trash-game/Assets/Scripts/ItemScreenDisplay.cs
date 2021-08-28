@@ -5,11 +5,16 @@ using TMPro;
 
 public class ItemScreenDisplay : MonoBehaviour
 {
+    public AudioSource tickSource;
     string standby = "...";
-    string item = "Aluminium Cansssss";
+    string item = "Shampoo Bottle";
     [SerializeField] TextMeshPro screenText;
+    
     // Start is called before the first frame update
     void Start() {
+        //SpeechSynthesizer _SS = new SpeechSynthesizer();
+        //_SS.Speak("Hello");
+        tickSource = GetComponent<AudioSource>();
         StartCoroutine(setScreenText(item));
     }
 
@@ -23,5 +28,6 @@ public class ItemScreenDisplay : MonoBehaviour
         screenText.text = standby;
         yield return new WaitForSeconds(1);
         screenText.text = item;
+        tickSource.Play();
     }
 }
