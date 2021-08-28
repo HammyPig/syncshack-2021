@@ -5,15 +5,14 @@ using TMPro;
 
 public class ItemScreenDisplay : MonoBehaviour
 {
-    public AudioSource tickSource;
     string standby = "...";
     string item = "Shampoo Bottle";
+
     [SerializeField] TextMeshPro screenText;
+    [SerializeField] AudioSource tickSource;
     
     // Start is called before the first frame update
     void Start() {
-        //SpeechSynthesizer _SS = new SpeechSynthesizer();
-        //_SS.Speak("Hello");
         tickSource = GetComponent<AudioSource>();
         StartCoroutine(setScreenText(item));
     }
