@@ -14,7 +14,7 @@ public class CSVReader : MonoBehaviour {
         public Trash[] trashList;
     }
 
-    public TrashList trashList = new TrashList();
+    public static TrashList trashList = new TrashList();
 
     // Start is called before the first frame update
     void Start() {

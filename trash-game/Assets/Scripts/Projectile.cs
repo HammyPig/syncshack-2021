@@ -5,16 +5,25 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Rigidbody trashBall;
+    public Rigidbody recycleBall;
     public GameObject cursor;
     public Transform firePoint;
     public LayerMask layer;
     public Transform stand;
+    [SerializeField] AudioSource explosionAudio;
+
+    public ItemScreenDisplay itemScreen;
 
     private Camera cam;
+
+    private int index = 0;
+
+    System.Random random = new System.Random();
 
     // Start is called before the first frame update
     void Start() {
         cam = Camera.main;
+        explosionAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,8 +46,16 @@ public class Projectile : MonoBehaviour
             stand.rotation = Quaternion.Euler(0.0f, transform.rotation.eulerAngles.y, 0.0f);
 
             if (Input.GetMouseButtonDown(0)) {
-                Rigidbody obj = Instantiate(trashBall, firePoint.position, Quaternion.identity);
+                Rigidbody obj;
+                if (CSVReader.trashList.trashList[index].trashType == 0) {
+                    obj = Instantiate(trashBall, firePoint.position, Quaternion.identity);
+                } else {
+                    obj = Instantiate(recycleBall, firePoint.position, Quaternion.identity);
+                }
                 obj.velocity = vo;
+                index = random.Next(0, CSVReader.trashList.trashList.Length);
+                itemScreen.updateScreen(CSVReader.trashList.trashList[index].name);
+                explosionAudio.Play();
             }
         } else {
             cursor.SetActive(false);

@@ -10,9 +10,9 @@ public class Truck : MonoBehaviour
     public bool right;
     private Vector3 screenBounds;
 
-    private trashType truckType;
+    public trashType truckType;
 
-    enum trashType {
+    public enum trashType {
         TRASH, // 0
         RECYCLABLE // 1
     }

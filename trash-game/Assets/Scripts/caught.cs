@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class caught : MonoBehaviour
 {
-    public AudioSource[] audioSource;
+    public CountdownTimer countdown;
+    [SerializeField] AudioSource goodAudio;
+    [SerializeField] AudioSource badAudio;
+    public Truck truck;
 
     void Start() {
-        audioSource = GetComponents<AudioSource>();
     }
 
     // assumes that projectiles (trash) has isTrigger enabled
-    private void OnTriggerEnter(Collider other){
-        Debug.Log("Caught trash");
-        // check if trash matches truck
+    private void OnTriggerEnter(Collider other) {
+        if (truck.truckType == Truck.trashType.TRASH) {
+            if (other.gameObject.tag == "Trash") {
+                CountdownTimer.addToTime(5f);
+                Destroy(other.gameObject);
+                goodAudio.Play();
+            } else if (other.gameObject.tag == "Recycle") {
+                badAudio.Play();
+                Destroy(other.gameObject);
+            }
+        }
 
-        //matches
-        
-        audioSource[1].Play();
-        // destroy the trash
-        // Destroy(other.gameObject);
+        if (truck.truckType == Truck.trashType.RECYCLABLE) {
+            if (other.gameObject.tag == "Recycle") {
+                CountdownTimer.addToTime(5f);
+                Destroy(other.gameObject);
+                goodAudio.Play();
+            } else if (other.gameObject.tag == "Trash") {
+                badAudio.Play();
+                Destroy(other.gameObject);
+            }
+        }
     }
 }
