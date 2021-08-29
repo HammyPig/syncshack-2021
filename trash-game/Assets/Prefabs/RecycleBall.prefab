@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7911291856049120961}
   - component: {fileID: 664552455049547894}
   m_Layer: 2
-  m_Name: TrashBall
-  m_TagString: Trash
+  m_Name: RecycleBall
+  m_TagString: Recycle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b68856195d49e7741bcefa98fed4f73f, type: 2}
+  - {fileID: 2100000, guid: 5db878668d445844f94bcc55bad8ddab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

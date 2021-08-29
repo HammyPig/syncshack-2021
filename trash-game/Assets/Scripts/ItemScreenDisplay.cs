@@ -32,4 +32,8 @@ public class ItemScreenDisplay : MonoBehaviour
         screenText.text = item;
         tickSource.Play();
     }
+
+    public void updateScreen(string item) {
+        StartCoroutine(setScreenText(item));
+    }
 }

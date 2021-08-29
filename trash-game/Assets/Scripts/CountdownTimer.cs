@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     bool alarm = true;
-    float timeLeft = 0f;
-    float startingTime = 6f;
+    private static float timeLeft = 0f;
+    public float startingTime = 30f;
 
     [SerializeField] Text countdownText;
     [SerializeField] AudioSource warningSound;
     [SerializeField] AudioSource finishSound;
     public GameOverScreen gameOverScreen;
+    public GameObject cannon;
 
     // Start is called before the first frame update
     void Start() {
@@ -38,12 +39,13 @@ public class CountdownTimer : MonoBehaviour
 
             if (timeLeft <= 0) {
                 timeLeft = 0;
+                cannon.SetActive(false);
                 gameOver();
             }
         }
     }
 
-    void addToTime(float time) {
+    public static void addToTime(float time) {
         timeLeft += time;
     }
 
